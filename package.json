@@ -1,5 +1,5 @@
 {
-  "name": "vscode-waystation",
+	"name": "vscode-waystation",
 	"displayName": "vscode-waystation",
 	"description": "Mark, annotate and execute your plan.",
 	"version": "0.0.1",
@@ -10,16 +10,25 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:vscode-waystation.helloWorld"
+		"onCommand:vscode-waystation.addMarkAtCursor"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "vscode-waystation.helloWorld",
-				"title": "Hello World"
+				"command": "vscode-waystation.addMarkAtCursor",
+				"title": "Add Mark At Cursor"
 			}
-		]
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"command": "vscode-waystation.addMarkAtCursor",
+					"title": "Add Mark",
+					"group": "Waystation"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
