@@ -9,7 +9,14 @@
 	"categories": [
 		"Other"
 	],
+	"extensionKind": [
+		"ui",
+		"workspace"
+	],
 	"activationEvents": [
+		"onCommand:vscode-waystation.currentWaystation",
+		"onCommand:vscode-waystation.newWaystation",
+		"onCommand:vscode-waystation.openWaystation",
 		"onCommand:vscode-waystation.addMarkAtCursor"
 	],
 	"main": "./out/extension.js",
@@ -17,7 +24,19 @@
 		"commands": [
 			{
 				"command": "vscode-waystation.addMarkAtCursor",
-				"title": "Add Mark At Cursor"
+				"title": "Waystation:Add Mark"
+			},
+			{
+				"command": "vscode-waystation.currentWaystation",
+				"title": "Waystation: Current"
+			},
+			{
+				"command": "vscode-waystation.openWaystation",
+				"title": "Waystation: Open"
+			},
+			{
+				"command": "vscode-waystation.newWaystation",
+				"title": "Waystation: New"
 			}
 		],
 		"menus": {
@@ -31,7 +50,6 @@
 		}
 	},
 	"scripts": {
-		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",
 		"watch": "tsc -watch -p ./",
 		"pretest": "npm run compile && npm run lint",
