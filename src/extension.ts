@@ -183,9 +183,7 @@ class WaystationPanel {
             return;
           case "waystation:openDocument":
             const mark = JSON.parse(message.mark);
-            const path = vscode.workspace.asRelativePath(mark.path);
-            const uri = vscode.Uri.file(path);
-            console.log(uri);
+            const uri = vscode.Uri.file(mark.path);
             vscode.workspace.openTextDocument(uri).then((document) => {
               const range = document.lineAt(mark.line - 1).range;
               vscode.window.showTextDocument(document, {
