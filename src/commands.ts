@@ -16,6 +16,7 @@ async function addMark(
   column = 1,
   context = "",
 ) {
+  context = context.replaceAll('"', '\\"');
   await exec(
     `${ADD_MARK} "${path}:${line}:${column}:${context}"`,
   );
